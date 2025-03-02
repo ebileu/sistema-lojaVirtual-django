@@ -8,6 +8,7 @@
 <p>Tecnologias utilizadas:</p>
 <ul>
   <li><strong>Python com Django</strong></li>
+  <li><strong>Bootstrap</strong></li>
   <li><strong>SQLITE3</strong></li>
 </ul>
 

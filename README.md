@@ -1,1 +1,2 @@
-# sistema-lojaVirtual-django
+# Rascunho da página inicial da aplicação
+

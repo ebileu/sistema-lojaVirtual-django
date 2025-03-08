@@ -61,31 +61,33 @@
             {% comment %} Primeira fileira {% endcomment %}
             <div class="row">
 
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
+                {%for i in produtos%}
+                    <div class="col-md-4">
+                        <div class="product">
+                            <span>{{i.nome_produto}}</span>
+                            <input type="checkbox">
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
+                {% endfor %}
+                    {% comment %} 
+                    <div class="col-md-4">
+                        <div class="product">
+                            <span>PRODUTO</span>
+                            <input type="checkbox">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
+                    <div class="col-md-4">
+                        <div class="product">
+                            <span>PRODUTO</span>
+                            <input type="checkbox">
+                        </div>
+                    </div> {% endcomment %}
+                
             </div>
 
             {% comment %} Segunda fileira {% endcomment %}
-            <div class="row">
+            {% comment %} <div class="row">
 
                 <div class="col-md-4">
                     <div class="product">
@@ -108,10 +110,10 @@
                     </div>
                 </div>
 
-            </div>
+            </div> {% endcomment %}
 
             {% comment %} Terceira fileira {% endcomment %}
-            <div class="row">
+            {% comment %} <div class="row">
 
                 <div class="col-md-4">
                     <div class="product">
@@ -134,10 +136,10 @@
                     </div>
                 </div>
 
-            </div>
+            </div> {% endcomment %}
 
             {% comment %} Quarta fileira {% endcomment %}
-            <div class="row">
+            {% comment %} <div class="row">
 
                 <div class="col-md-4">
                     <div class="product">
@@ -160,10 +162,10 @@
                     </div>
                 </div>
 
-            </div>
+            </div> {% endcomment %}
 
             {% comment %} Quinta fileira {% endcomment %}
-            <div class="row">
+            {% comment %} <div class="row">
 
                 <div class="col-md-4">
                     <div class="product">
@@ -186,7 +188,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> {% endcomment %}
 
         </div>
     </div>

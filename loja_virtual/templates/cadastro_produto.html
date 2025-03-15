@@ -32,7 +32,7 @@
 
                 <div class="col-md-3">
                     <label for="inputQntd" class="form-label">Quantidade em Estoque</label>
-                    <input type="number" name="quantidade_estoque" class="form-control" id="inputQntd" placeholder="Digite a quantidade em estoque..." min="0" max="15" required>
+                    <input type="number" name="quantidade_estoque" class="form-control" id="inputQntd" placeholder="Digite a quantidade em estoque..." min="0" required>
                 </div>
 
                 <div class="col-md-3">
@@ -49,7 +49,8 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Cadastrar produto</button>                    
+                    <button type="submit" class="btn btn-primary">Cadastrar produto</button>        
+                    <a href= {% url "pagina_inicial" %} class="btn btn-danger">Voltar para a tela inicial</a>         
                 </div>
             </form>
         </div>

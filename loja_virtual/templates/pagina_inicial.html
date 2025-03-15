@@ -18,6 +18,8 @@
             text-align: center;
         }
         ul{
+            margin: 0;
+            padding: 0;
             list-style: none;
         }
         .product{
@@ -42,11 +44,11 @@
 </head>
 <body>
     {% comment %} border border-primary  border border-danger {% endcomment %}
-    <div class="container border border-dark d-flex justify-content-between align-items-center h-75">
+    <div class="container d-flex justify-content-between align-items-center h-75">
         <nav class="container_menu_options  w-10 d-flex justify-content-center mx-1">
             <div class="menu_options  w-100 p-1">
                 <ul>
-                    <li><a href="#" class="btn btn-primary mb-2">Criar Produto</a></li>
+                    <li><a href={% url "cadastro_produto" %} class="btn btn-primary mb-2">Criar Produto</a></li>
                     <hr>
                     <li><a href="#" class="btn btn-warning mb-2">Editar Produto</a></li>
                     <hr>
@@ -55,140 +57,35 @@
             </div>
         </nav>
     
-        <div class="card menu-card shadow-lg p-4 border border-dark h-75 w-100">
+        <div class="card menu-card shadow-lg p-4 border border-dark h-100 w-100">
             <h3 class="mb-4">Gerenciamento de Produtos</h3>
 
-            {% comment %} Primeira fileira {% endcomment %}
-            <div class="row">
-
-                {%for i in produtos%}
-                    <div class="col-md-4">
-                        <div class="product">
-                            <span>{{i.nome_produto}}</span>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-                {% endfor %}
-                    {% comment %} 
-                    <div class="col-md-4">
-                        <div class="product">
-                            <span>PRODUTO</span>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="product">
-                            <span>PRODUTO</span>
-                            <input type="checkbox">
-                        </div>
-                    </div> {% endcomment %}
+            <div>
+                {% for i in produtos%}
+                    {% if forloop.first or forloop.counter0|divisibleby:3 %}
+                        <div class="row">
+                    {% endif %}
+                        
                 
+                    <div class="col-md-4">
+                        <div class="product "> 
+                            <div class="product_info d-flex justify-content-between flex-column ">
+                                <span>NOME: {{i.nome_produto}}</span>
+                                <span>QUANTIDADE: {{i.quantidade}}</span>
+                                <span>R${{i.preco}}</span>
+
+                                <div class="d-flex justify-content-end">
+                                    <input type="checkbox">
+                                </div>     
+                            </div>                 
+                        </div>
+                    </div>
+                    
+                    {% if forloop.counter|divisibleby:3 or forloop.last %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
-
-            {% comment %} Segunda fileira {% endcomment %}
-            {% comment %} <div class="row">
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-            </div> {% endcomment %}
-
-            {% comment %} Terceira fileira {% endcomment %}
-            {% comment %} <div class="row">
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-            </div> {% endcomment %}
-
-            {% comment %} Quarta fileira {% endcomment %}
-            {% comment %} <div class="row">
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-            </div> {% endcomment %}
-
-            {% comment %} Quinta fileira {% endcomment %}
-            {% comment %} <div class="row">
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product">
-                        <span>PRODUTO</span>
-                        <input type="checkbox">
-                    </div>
-                </div>
-
-            </div> {% endcomment %}
 
         </div>
     </div>

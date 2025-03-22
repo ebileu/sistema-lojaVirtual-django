@@ -28,9 +28,7 @@ Para inicializar o ambiente virtual, é necessário digitar o comando: venv\Scri
 
 <h2>Sobre as tecnologias utilizadas</h2>
 Utilizei o Django, framework do Python, para a criação do sistema. Eu escolhi o Django por ser um framework de uma linguagem na qual eu mais tenho estudado nos últimos tempos e gostaria de me aprofundar mais. 
-
 Usei do Bootstrap para a estilização dos templates do programa, deixando a estilização, na minha visão, mais simples e até mais organizado e bonito de ver em código.
-
 O banco de dados utilizado foi o que está configurado como padrão no Django, que é o SQLITE3, e foi o que utilizei para criar a tabela e os atributos da entidade. A tabela foi criada no arquivo models.py e a visualização da tabela se encontra no arquivo db.sqlite3 (para ser possível ver a tabela no VS Code, é recomendável baixar a extensão SQLite Viewer). 
 
 <h2>Melhorias para o futuro</h2>

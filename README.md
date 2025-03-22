@@ -33,7 +33,7 @@ Usei do Bootstrap para a estilização dos templates do programa, deixando a est
 
 O banco de dados utilizado foi o que está configurado como padrão no Django, que é o SQLITE3, e foi o que utilizei para criar a tabela e os atributos da entidade. A tabela foi criada no arquivo models.py e a visualização da tabela se encontra no arquivo db.sqlite3 (para ser possível ver a tabela no VS Code, é recomendável baixar a extensão SQLite Viewer). 
 
-<h2>Melhorias pro futuro</h2>
+<h2>Melhorias para o futuro</h2>
 <ul>
   <li>Adicionar um método de verificação para caso tenha um produto cadastrado com o mesmo nome no banco e avisar ao usuário sobre (talvez até mesmo perguntar qual dos dois cadastros o usuário deseja manter no banco);</li>
   <li>Melhorar o design do template (deixando inclusive responsivo), pois como minha intenção foi mais focar no CRUD, acabei deixando o design da página mais simples e funcional;</li>

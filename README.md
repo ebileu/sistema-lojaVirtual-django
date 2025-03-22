@@ -22,5 +22,25 @@
   <li>Criar uma interface amigável para facilitar a interação com o sistema</li>
 </ul>
 
+<h2>Instruções para iniciar o projeto</h2>
+Após salvar o projeto, no terminal do VS Code, será necessário inicializar o ambiente virtual que está instalado o framework.
+Para inicializar o ambiente virtual, é necessário digitar o comando: venv\Scripts\Activate. Logo após iniciar o ambiente virtual, será necessário inicializar o servidor usando o comando: python manage.py runserver e vai ser gerado um link no terminal, onde poderá acessar a aplicação.
+
+<h2>Sobre as tecnologias utilizadas</h2>
+Utilizei o Django, framework do Python, para a criação do sistema. Eu escolhi o Django por ser um framework de uma linguagem na qual eu mais tenho estudado nos últimos tempos e gostaria de me aprofundar mais. 
+
+Usei do Bootstrap para a estilização dos templates do programa, deixando a estilização, na minha visão, mais simples e até mais organizado e bonito de ver em código.
+
+O banco de dados utilizado foi o que está configurado como padrão no Django, que é o SQLITE3, e foi o que utilizei para criar a tabela e os atributos da entidade. A tabela foi criada no arquivo models.py e a visualização da tabela se encontra no arquivo db.sqlite3 (para ser possível ver a tabela no VS Code, é recomendável baixar a extensão SQLite Viewer). 
+
+<h2>Melhorias pro futuro</h2>
+<ul>
+  <li>Adicionar um método de verificação para caso tenha um produto cadastrado com o mesmo nome no banco e avisar ao usuário sobre (talvez até mesmo perguntar qual dos dois cadastros o usuário deseja manter no banco);</li>
+  <li>Melhorar o design do template (deixando inclusive responsivo), pois como minha intenção foi mais focar no CRUD, acabei deixando o design da página mais simples e funcional;</li>
+  <li>Aumentar a quantidade de cadastros do sistema, quis limitar o sistema para até 12 cadastros, para não ficar algo muito extenso ou com muita informação, então preferir deixar um pouco mais simples, novamente, focando mais no processo de CRUD;</li>
+  <li>Adicionar um campo no cadastro do produto, onde poderia ser possível adicionar o tipo do produto, se é consumível, material, ferramenta e etc... e aproveitando esse gancho, também seria interessante adicionar uma opção de filtragem de tipo do produto, onde o   usuário poderia visualizar apenas os produto do tipo que ele filtrou;</li>
+  <li>Ainda no cadastro do produto, seria interessante poder adicionar uma foto do produto para identificação e até mesmo colocar uma data em que o produto foi cadastrado, para afins de consulta.</li>
+</ul>
+
 <h2></h2>
 <p>Esta atividade foi proposta pela UNIFAN (Centro Universitário Nobre) de Feira de Santana</p>

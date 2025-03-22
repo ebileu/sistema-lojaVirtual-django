@@ -12,7 +12,6 @@
             align-items: center;
             height: 100vh;
             background-color: #f8f9fa;
-            border: 2px red solid;
         }
         .menu-card {
             text-align: center;
@@ -43,16 +42,19 @@
     </style>
 </head>
 <body>
-    {% comment %} border border-primary  border border-danger {% endcomment %}
     <div class="container d-flex justify-content-between align-items-center h-75">
         <nav class="container_menu_options  w-10 d-flex justify-content-center mx-1">
             <div class="menu_options  w-100 p-1">
                 <ul>
-                    <li><a href={% url "cadastro_produto" %} class="btn btn-primary mb-2">Criar Produto</a></li>
+                    {% if produtos_count >= 12%}
+                        <li><a href="#" id="criar_btn" class="btn btn-primary disabled mb-2">Criar Produto</a></li>
+                    {% elif  produtos_count <= 12%}
+                        <li><a href={% url "cadastro_produto" %} id="criar_btn" class="btn btn-primary mb-2">Criar Produto</a></li>
+                    {% endif %}
                     <hr>
-                    <li><a href="#" class="btn btn-warning mb-2">Editar Produto</a></li>
+                    <li><a href="#" id="editar_btn" class="btn btn-warning mb-2">Editar Produto</a></li>
                     <hr>
-                    <li><a href="#" class="btn btn-danger mb-2">Excluir Produto</a></li>
+                    <li><a href="#" id="delete_btn" class="btn btn-danger mb-2">Excluir Produto</a></li>
                 </ul>
             </div>
         </nav>
@@ -75,8 +77,8 @@
                                 <span>R${{i.preco}}</span>
 
                                 <div class="d-flex justify-content-end">
-                                    <input type="checkbox">
-                                </div>     
+                                    <input value="{{i.id}}" class="produtos_selecionados" type="checkbox">
+                                </div>      
                             </div>                 
                         </div>
                     </div>
@@ -87,8 +89,49 @@
                 {% endfor %}
             </div>
 
+            {% if produtos_count >= 12 %}
+                <div class="alert alert-danger" role="alert">
+                    Sistema chegou ao limite, para continuar cadastrando, delete algum produto.
+                </div>
+            {% endif %}
+
         </div>
     </div>
+
+    <script>
+        document.getElementById("delete_btn").addEventListener("click", function(event){
+            event.preventDefault();
+
+            let checkboxes = document.querySelectorAll('.produtos_selecionados:checked');
+            let ids = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+            if (ids.length === 0){
+                alert('Selecione pelo menos um produto para deletar.')
+                return;
+            }
+
+            let url = "{% url "deletar_produto" %}?ids=" + ids.join(",");
+
+            window.location.href = url;
+        });
+
+        document.getElementById("editar_btn").addEventListener("click", function(event){
+            event.preventDefault();
+
+            let checkboxes = document.querySelectorAll('.produtos_selecionados:checked');
+            let id = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+            if (id.length > 1){
+                alert('Só é possível editar um produto por vez')
+                return;
+            }
+
+            let url = "{% url "produto_perfil" %}?id=" + id.join();
+            window.location.href = url;
+        });
+
+
+    </script>
 
 </body>
 </html>

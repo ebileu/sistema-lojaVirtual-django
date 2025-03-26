@@ -124,6 +124,9 @@
             if (id.length > 1){
                 alert('Só é possível editar um produto por vez')
                 return;
+            } else if (id.length === 0){
+                alert('Selecione pelo menos um produto para editar')
+                return;
             }
 
             let url = "{% url "produto_perfil" %}?id=" + id.join();

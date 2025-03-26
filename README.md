@@ -23,8 +23,24 @@
 </ul>
 
 <h2>Instruções para iniciar o projeto</h2>
-Após salvar o projeto, no terminal do VS Code, será necessário inicializar o ambiente virtual que está instalado o framework.
-Para inicializar o ambiente virtual, é necessário digitar o comando: venv\Scripts\Activate. Logo após iniciar o ambiente virtual, será necessário inicializar o servidor usando o comando: python manage.py runserver e vai ser gerado um link no terminal, onde poderá acessar a aplicação.
+Após salvar o projeto, no terminal do VS Code, será necessário inicializar o ambiente virtual do VSCode e logo depois instalar o framework.
+<br>
+Logo abaixo, terá as instruções para usar o sistema tanto em Windows quanto no Linux.
+<h2>Windows</h2>
+1 - Abra o terminal do VSCode;  <br>
+2 - Inicialize um ambiente virtual com o comando: python -m venv venv; <br>
+3 - Logo após a instalação de um ambiente virtual, será necessário ativá-lo, utilize o comando: venv\Scripts\activate (ou Activate); <br>
+4 - Após iniciar o ambiente virtual, você saberá se deu certo, quando na próxima linha do terminal aparecer bem destacado o nome do ambiente virtual (que seguindo as instruções será venv); <br>
+5 - Instale o Django usando o comando: pip install django; <br>
+6 - Por último, é só iniciar a aplicação, usando o comando: python manage.py runserver, será liberado um link localhost no terminal e é só acessar esse link. <br>
+
+<h2>Linux</h2>
+1 - Abra o terminal do VSCode; <br>
+2 - Inicialize um ambiente virtual com o comando: python3 -m venv venv; <br>
+3 - Logo após a instalação de um ambiente virtual, será necessário ativá-lo, utilize o comando: source venv/bin/activate; <br>
+4 - Após iniciar o ambiente virtual, você saberá se deu certo, quando na próxima linha do terminal aparecer bem destacado o nome do ambiente virtual (que seguindo as instruções será venv); <br>
+5 - Instale o Django usando o comando: pip install django; <br>
+6 - Por último, é só iniciar a aplicação, usando o comando: python manage.py runserver, será liberado um link localhost no terminal e é só acessar esse link. <br>
 
 <h2>Sobre as tecnologias utilizadas</h2>
 Utilizei o Django, framework do Python, para a criação do sistema. Eu escolhi o Django por ser um framework de uma linguagem na qual eu mais tenho estudado nos últimos tempos e gostaria de me aprofundar mais. 
